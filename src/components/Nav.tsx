@@ -19,7 +19,7 @@ export const Nav = () => {
     <>
       <nav className="py-4 md:flex items-center justify-center mx-auto gap-8 hidden">
         <a href="/" className="text-3xl flex gap-4 font-bold items-center">
-          <img src={logo.src} className="h-[10dvh]" />
+          <img src={logo.src} alt="soy logo" className="h-[10dvh]" />
           <p>Home</p>
         </a>
         <div className="contents font-bold uppercase">
@@ -41,7 +41,7 @@ export const Nav = () => {
         </button>
         <a href="/" className="flex gap-2 items-center md:hidden">
           <h1 className="text-2xl">Home</h1>
-          <img src={logo.src} alt="logo" className="h-[8dvh]" />
+          <img src={logo.src} alt="soy logo" className="h-[8dvh]" />
         </a>
       </div>
       {/* MOBILE NAV */}
