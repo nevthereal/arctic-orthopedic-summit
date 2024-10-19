@@ -5,18 +5,38 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout title="Venue">
   <main class="mx-8 md:mx-16">
     <div class="md:grid md:grid-cols-2 gap-8">
-      <div>
-        <h1 class="text-3xl mb-8">Venue</h1>
-        <h3 class="mb-4 text-2xl">Location: Levi, Lapland</h3>
-        <p class="mb-8">
-          During the congress, participants can choose from a range of
-          accommodation options to suit different needs and budgets, all
-          conveniently located near the Levi Mountain Centre. The congress will
-          take place at the Levi Mountain Centre in Hotel Hullu Poro, which
-          offers easy access to all events. A quota of rooms has been reserved
-          for participants, along with various options including hotels and
-          cabins, allowing attendees to select the most suitable option for
-          their stay.
+      <div class="prose">
+        <h1>Venue</h1>
+        <h3>Location: Levi, Lapland</h3>
+        <h3>Congress Venue: Hotel Hullu Poro, Levi Mountain Centre</h3>
+        <p>
+          Participants of the congress will have a variety of accommodation
+          options to choose from, catering to different needs and budgets. All
+          accommodations are conveniently located near the Levi Mountain Centre.
+          The congress itself will be held at the Levi Mountain Centre, within
+          the Hotel Hullu Poro, offering easy access to all congress events. A
+          special room quota has been reserved for participants, including hotel
+          rooms and cabins, ensuring flexibility for attendees to find the most
+          suitable option for their stay.
+        </p>
+        <p>
+          Participants can choose from a range of accommodations conveniently
+          located near the congress venue:
+          <ul>
+            <li>
+              Hotel Hullu Poro: <a href="https://hulluporo.fi" target="_blank"
+                >hulluporo.fi</a
+              >
+            </li>
+            <li>
+              Cabins and other options: <a
+                href="https://levi.fi"
+                target="_blank">levi.fi</a
+              >
+            </li>
+          </ul>
+          Both options provide comfortable and accessible lodging for your stay in
+          Levi during the congress.
         </p>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1506.9934144192425!2d24.80723607790104!3d67.8081066559591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d24d5a87b3f0fd%3A0xd00dac320805b483!2sHullu%20Poro%20(Hotel%20Crazy%20Reindeer)!5e0!3m2!1sde!2sch!4v1727347059773!5m2!1sde!2sch"
@@ -24,14 +44,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          class="w-full max-md:h-[300px] md:h-[500px]"></iframe>
+          class="w-full max-md:h-[300px] md:h-[500px] mt-4"></iframe>
       </div>
-      <div class="max-md:mt-8">
-        <h1 class="text-3xl mb-8">Travel</h1>
-        <ol class="list-decimal list-inside">
-          <li>Flight to Kittilä</li>
-          <li>Bus/taxi to Levi (20min)</li>
-        </ol>
+      <div class="max-md:mt-8 prose">
+        <h1>Travel</h1>
+        <p>
+          The nearest airport is Kittilä Airport, Finland, located just 20
+          minutes from Levi by bus or taxi.
+        </p>
       </div>
     </div>
   </main>
