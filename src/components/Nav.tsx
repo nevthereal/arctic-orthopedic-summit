@@ -53,9 +53,7 @@ export const Nav = () => {
               : "z-30 fixed -left-full top-0"
           }
         >
-          <a href="/">
-            <h1 className="text-4xl mb-4 font-black">AOS 2025</h1>
-          </a>
+          <h1 className="text-4xl mb-4 font-black">Navigation</h1>
           <ul className="flex flex-col gap-4 font-medium">
             {links.map((link, idx) => {
               return (

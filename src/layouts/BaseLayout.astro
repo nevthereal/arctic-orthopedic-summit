@@ -27,11 +27,11 @@ const { title, desc } = Astro.props;
     <meta name="og:description" content={desc} />
     <title>AOS 2025 - {title}</title>
   </head>
-  <body class="flex flex-col">
+  <body>
     <Nav client:load />
-    <main class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <slot />
-    </main>
+    </div>
     <Footer />
   </body>
 </html>
