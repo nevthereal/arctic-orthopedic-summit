@@ -1,5 +1,5 @@
 import logo from "../assets/logo.jpeg";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const Nav = () => {
   const links = [
@@ -19,8 +19,7 @@ export const Nav = () => {
     <>
       <nav className="py-4 md:flex items-center justify-center mx-auto gap-8 hidden">
         <a href="/" className="text-3xl flex gap-4 font-bold items-center">
-          <img src={logo.src} alt="soy logo" className="h-[10dvh]" />
-          <p>Home</p>
+          Home
         </a>
         <div className="contents font-bold uppercase">
           {links.map((link, idx) => {
@@ -31,7 +30,11 @@ export const Nav = () => {
             );
           })}
         </div>
+        <a href="https://soy.fi" target="_blank">
+          <img src={logo.src} alt="soy logo" width="110" />
+        </a>
       </nav>
+      {/* MOBILE NAV */}
       <div className="flex justify-between p-4 items-center">
         <button
           onClick={handleNav}
@@ -39,12 +42,14 @@ export const Nav = () => {
         >
           <i className="fa-solid fa-bars"></i>
         </button>
-        <a href="/" className="flex gap-2 items-center md:hidden">
-          <h1 className="text-2xl">Home</h1>
-          <img src={logo.src} alt="soy logo" className="h-[8dvh]" />
+        <a
+          href="https://soy.fi"
+          target="_blank"
+          className="flex gap-2 items-center md:hidden"
+        >
+          <img src={logo.src} alt="soy logo" width={75} />
         </a>
       </div>
-      {/* MOBILE NAV */}
       <section className="block md:hidden">
         <nav
           className={
@@ -55,6 +60,7 @@ export const Nav = () => {
         >
           <h1 className="text-4xl mb-4 font-black">Navigation</h1>
           <ul className="flex flex-col gap-4 font-medium">
+            <a href="/">Home</a>
             {links.map((link, idx) => {
               return (
                 <li>

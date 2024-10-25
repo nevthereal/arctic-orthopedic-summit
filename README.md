@@ -1,4 +1,5 @@
 # Todo
 
-- Activities Text
-- PDF ScPr
+- Activities photos
+- prices mby
+- history page
