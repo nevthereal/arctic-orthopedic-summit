@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SkiPhoto from "../assets/skiing.png";
+import SOYskiLogo from "../assets/IMG_4135.jpg";
+import aurora from "../assets/aurora.png";
 import { Image } from "astro:assets";
 ---
 
@@ -10,26 +12,29 @@ import { Image } from "astro:assets";
 >
   <main class="mx-8 md:mx-16 mb-8">
     <div class="grid xl:grid-cols-2 gap-16">
-      <div class="flex flex-col justify-center items-center m-auto">
-        <h1 class="text-3xl">Activities</h1>
-        <div class="flex-col flex gap-8 justify-evenly h-full p-4">
+      <div>
+        <h1 class="text-3xl mb-8">Activities</h1>
+        <div class="prose">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            officiis tempora corrupti a natus ea eos amet ipsum. Reiciendis
-            excepturi iusto vel accusamus exercitationem aperiam placeat ab,
-            tempore mollitia nemo omnis illo eius dolorem! Doloremque aperiam
-            facere ea corrupti tenetur ratione, dolor praesentium quia neque,
-            debitis voluptates iusto, numquam reiciendis? Dolore saepe cumque
-            quia incidunt ipsum, itaque, tempora facilis dolor mollitia
-            temporibus inventore? Rem, consectetur neque fugiat magni at numquam
-            animi nam tempore dolor quos nihil tenetur nisi, esse ipsum eveniet
-            blanditiis. Cupiditate animi optio natus ipsam tempora perferendis
-            illo excepturi nobis incidunt accusantium dolores maxime sunt,
-            aperiam saepe minus.
+            A diverse range of activities is available for you to enjoy
+            alongside the conference:
+            <ul>
+              <li>Skiing</li>
+              <li>Alpine Skiing</li>
+              <li>Snowmobiling</li>
+              <li>Husky</li>
+              <li>Restaurants</li>
+              <li>Sauna</li>
+              <li>Nordic Lights</li>
+            </ul>
           </p>
         </div>
       </div>
-      <Image class="m-auto" width={640} src={SkiPhoto} alt="stock image 2" />
+      <div>
+        <Image class="m-auto" src={SkiPhoto} alt="stock image 2" />
+        <Image class="m-auto" src={SOYskiLogo} alt="SOY ski club logo" />
+        <Image class="m-auto" src={aurora} alt="nordic light" />
+      </div>
     </div>
   </main>
 </BaseLayout>
