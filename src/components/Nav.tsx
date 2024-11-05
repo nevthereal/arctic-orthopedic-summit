@@ -19,10 +19,8 @@ export const Nav = () => {
   return (
     <>
       <nav className="py-4 md:flex items-center justify-center mx-auto gap-8 hidden">
-        <a href="/" className="text-3xl flex gap-4 font-bold items-center">
-          Home
-        </a>
         <div className="contents font-bold uppercase">
+          <a href="/">Home</a>
           {links.map((link, idx) => {
             return (
               <a key={idx} href={link.href}>
@@ -32,7 +30,7 @@ export const Nav = () => {
           })}
         </div>
         <a href="https://soy.fi" target="_blank">
-          <img src={logo.src} alt="soy logo" width="110" />
+          <img src={logo.src} alt="soy logo" className="w-16" />
         </a>
       </nav>
       {/* MOBILE NAV */}
@@ -48,7 +46,7 @@ export const Nav = () => {
           target="_blank"
           className="flex gap-2 items-center md:hidden"
         >
-          <img src={logo.src} alt="soy logo" width={75} />
+          <img src={logo.src} alt="soy logo" className="w-16" />
         </a>
       </div>
       <section className="block md:hidden">
