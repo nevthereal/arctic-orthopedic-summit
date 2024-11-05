@@ -5,6 +5,7 @@ export const Nav = () => {
   const links = [
     { href: "/scientific-program", text: "scientific program" },
     { href: "/registration", text: "registration" },
+    { href: "/history", text: "history" },
     { href: "/activities", text: "activities" },
     { href: "/venue", text: "venue/travel" },
   ];
