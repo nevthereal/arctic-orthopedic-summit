@@ -1,5 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Conference from "../assets/conference3.jpg";
+import Gala from "../assets/gala4.jpg";
+import Comittee from "../assets/comitee2.jpg";
 ---
 
 <BaseLayout title="History" desc="A little bit of history about the Event">
@@ -10,6 +14,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       1951. Over the decades, the association has developed into the largest
       specialty organization in the field of surgery in Finland.
     </p>
+    <Image src={Conference} alt={"image of conference"} />
     <p>
       SOY's structured course program began in 1970 with a two-day advanced
       training event focusing on lumbar pain syndromes, held at the Helsinki
@@ -21,6 +26,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       (Vidareutbildningskurs för blivande kirurger) in Östersund and Åre,
       Sweden, in the spring of 1973.
     </p>
+    <Image src={Comittee} alt={"group pic of the committee"} />
     <p>
       The first Lapinkurssi (Arctic Orthopedic Summit) was held in Rovaniemi,
       Lapland, in 1974. Initially, the course was hands-on, offering
@@ -42,9 +48,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       Highlights include family-friendly skiing competitions and a formal gala
       dinner, celebrated with an elegant yet welcoming ambiance.
     </p>
+    <Image src={Gala} alt={"gala"} />
     <p>
       Despite an increase in available domestic and international conferences,
-      the course has consistently drawn a robust attendance of 150–180
+      the course has consistently drawn a robust attendance of 150-180
       participants in recent years. The event has only been canceled once, in
       2022, due to the pandemic; it was subsequently held in 2023, marking a
       temporary shift from its traditional biennial schedule.

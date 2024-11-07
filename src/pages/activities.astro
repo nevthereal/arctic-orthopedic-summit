@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SkiPhoto from "../assets/skiing.png";
-import SOYskiLogo from "../assets/IMG_4135.jpg";
-import aurora from "../assets/aurora.png";
 import { Image } from "astro:assets";
+
+const gallery: { default: ImageMetadata }[] = await Astro.glob(
+  "../assets/activities/*.jpg",
+);
 ---
 
 <BaseLayout
@@ -11,7 +12,7 @@ import { Image } from "astro:assets";
   desc="24th Arctic Orthopedic Summit - Activities"
 >
   <main class="mx-8 md:mx-16 mb-8">
-    <div class="grid xl:grid-cols-2 gap-16">
+    <div>
       <div>
         <h1 class="text-3xl mb-8">Activities</h1>
         <div class="prose">
@@ -19,21 +20,51 @@ import { Image } from "astro:assets";
             A diverse range of activities is available for you to enjoy
             alongside the conference:
             <ul>
-              <li>Skiing</li>
-              <li>Alpine Skiing</li>
-              <li>Snowmobiling</li>
-              <li>Husky</li>
-              <li>Restaurants</li>
-              <li>Sauna</li>
-              <li>Nordic Lights</li>
+              <li>
+                <a href="https://www.levi.fi/en/" target="_blank"
+                  >Alpine Skiing</a
+                >
+              </li>
+              <li>Cross country Skiing</li>
+              <li>
+                <a href="www.laplandsafaris.com/en" target="_blank"
+                  >Snowmobiling</a
+                >
+              </li>
+              <li>
+                <a href="https://levihuskypark.fi/en/" target="_blank">Husky</a>
+              </li>
+              <li>
+                <a href="https://sammuntupa.fi/en_US" target="_blank"
+                  >Reindeer Tours</a
+                >
+              </li>
+              <li><a href="https://www.levi.fi/en/">Restaurants</a></li>
+              <li>
+                <a
+                  href="www.levi.fi/en/activities/wellbeing/sauna/"
+                  target="_blank">Sauna</a
+                >
+              </li>
+              <li>
+                <a href="https://levi.northernlightsvillage.com/"
+                  >Northern Lights</a
+                >
+              </li>
             </ul>
           </p>
         </div>
       </div>
       <div>
-        <Image class="m-auto" src={SkiPhoto} alt="stock image 2" />
-        <Image class="m-auto" src={SOYskiLogo} alt="SOY ski club logo" />
-        <Image class="m-auto" src={aurora} alt="nordic light" />
+        <h1 class="text-3xl mb-4 mt-8">Image gallery</h1>
+        <p>Some impressions from past events</p>
+        <div class="md:columns-3 mt-8 space-y-4">
+          {
+            gallery.map((img) => {
+              return <Image src={img.default} alt="" />;
+            })
+          }
+        </div>
       </div>
     </div>
   </main>
