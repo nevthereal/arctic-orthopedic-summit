@@ -74,12 +74,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <!-- 11:15-12:30 Row -->
           <tr>
             <td class="px-4 py-2 border">11:15-12:30</td>
+            <td></td>
             <td class="px-4 py-2 border italic bg-yellow-200">Lunch</td>
             <td class="px-4 py-2 border italic bg-yellow-200">Lunch</td>
             <td class="px-4 py-2 border italic bg-yellow-200">Lunch</td>
             <td class="px-4 py-2 border italic bg-yellow-200">Lunch</td>
             <td class="px-4 py-2 border italic bg-yellow-200">Lunch</td>
-            <td class="px-4 py-2 border"></td>
           </tr>
 
           <!-- 12:30-14:30 Row -->
@@ -87,24 +87,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <td class="px-4 py-2 border">12:30-14:30</td>
             <td class="px-4 py-2 border"></td>
             <td class="px-4 py-2 border italic bg-gray-200"
-              >Industry Meetings</td
+              >Industrial Meetings</td
             >
             <td class="px-4 py-2 border italic bg-gray-200"
-              >Industry Meetings</td
+              >Industrial Meetings</td
             >
             <td class="px-4 py-2 border italic bg-gray-200"
-              >Industry Meetings</td
+              >Industrial Meetings</td
             >
             <td class="px-4 py-2 border italic bg-gray-200"
-              >Industry Meetings</td
+              >Industrial Meetings</td
             >
-            <td class="px-4 py-2 border italic bg-gray-200"></td>
+            <td class="px-4 py-2 border italic bg-gray-200 text-center"
+              >End Discussion and Adjourn (11:15-11:45)</td
+            >
           </tr>
 
           <!-- 15:00-18:00 Row for Discussions 1 & 2 -->
           <tr>
             <td class="px-4 py-2 border">15:00-18:00</td>
-            <td class="px-4 py-2 border"></td>
+            <td class="px-4 py-2 border italic bg-blue-200">Registration</td>
             <td class="px-4 py-2 border bg-pink-200">
               <p class="font-bold">Discussions 1</p>
               <p class="font-normal">Feedback - from assessment to learning</p>
@@ -117,7 +119,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </p>
               <p class="font-semibold">Topi Laaksonen, Kaj Zilliacus</p>
             </td>
-            <td class="px-4 py-2 border"></td>
             <td class="px-4 py-2 border bg-red-200">
               <p class="font-bold">Discussions 3</p>
               <p class="font-normal">PF OA & PF Arthroplasty</p>
@@ -128,6 +129,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <p class="font-normal">Controversies in bone tumors</p>
               <p class="font-semibold">Minna Laitinen, Lee Jays</p>
             </td>
+            <td></td>
           </tr>
 
           <!-- Add more rows here for each time slot -->
@@ -139,19 +141,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             >
             <td></td>
             <td class="px-4 py-2 border italic bg-gray-200">Get Together</td>
-            <td></td>
             <td class="px-4 py-2 border italic bg-gray-200">Course Dinner</td>
             <td></td>
-          </tr>
-
-          <!-- Final Closing Row -->
-          <tr>
-            <td class="px-4 py-2 border">11:15-11:45</td>
-            <td
-              colspan="6"
-              class="px-4 py-2 border italic bg-gray-200 text-center"
-              >Closing of Discussion and Adjourn</td
-            >
+            <td></td>
           </tr>
         </tbody>
       </table>
