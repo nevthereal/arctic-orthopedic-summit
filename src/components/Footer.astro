@@ -9,7 +9,7 @@ const committee = [
 ---
 
 <footer
-  class="max-w-[90%] grid md:grid-cols-2 max-md:gap-4 mx-auto py-4 mt-16 font-bold"
+  class="max-w-[90%] grid md:grid-cols-2 max-md:gap-2 mx-auto py-4 mt-16 font-bold"
 >
   <div class="flex justify-center flex-col items-center gap-2">
     <p>
@@ -20,9 +20,9 @@ const committee = [
     <p>Contact: <a href="mailto:AOS2025@SOY.FI">AOS2025@SOY.FI</a></p>
   </div>
   <div class="border hidden max-md:block"></div>
-  <div class="flex justify-center flex-col items-center gap-2">
+  <div class="flex justify-center flex-col items-center gap-4">
     <h1>Organisation committee:</h1>
-    <ul class="text-xs">
+    <ul class="text-xs flex flex-col gap-2">
       {
         committee.map((member) => {
           return (
