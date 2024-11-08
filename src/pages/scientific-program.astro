@@ -6,11 +6,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="Scientific Program"
   desc="24th Arctic Orthopedic Summit - Scientific Program"
 >
-  <main class="mx-8 md:mx-auto mb-8 prose">
-    <h1>Scientific Program</h1>
+  <main class="mx-8 mb-8">
+    <h1 class="text-3xl mb-8">Scientific Program</h1>
 
-    <div class="w-full overflow-auto">
-      <table class="table-auto w-full text-sm text-left border-collapse">
+    <div class="max-md:overflow-auto">
+      <table class="table-auto text-sm text-left border-collapse">
         <thead>
           <tr class="bg-gray-200">
             <th class="px-4 py-2 border">Time</th>
@@ -131,10 +131,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </td>
             <td></td>
           </tr>
-
-          <!-- Add more rows here for each time slot -->
-
-          <!-- Example of Evening Events -->
           <tr>
             <td class="px-4 py-2 border">18:00-19:00</td>
             <td class="px-4 py-2 border italic bg-gray-200">Opening Ceremony</td

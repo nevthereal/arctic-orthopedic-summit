@@ -1,5 +1,15 @@
+---
+const committee = [
+  { name: "Mikko Hautamäki", role: "Chairman" },
+  { name: "Timo Sirola", role: "Secretary" },
+  { name: "Robert Björkenheim", role: "Scientific program" },
+  { name: "Jani Puhakka", role: "Company affiliation / Social program" },
+  { name: "Henrik Sandelin", role: "Treasurer" },
+];
+---
+
 <footer
-  class="w-[90%] md:w-[50%] grid md:grid-cols-2 max-md:gap-4 mx-auto py-4 mt-16 font-bold"
+  class="max-w-[90%] grid md:grid-cols-2 max-md:gap-4 mx-auto py-4 mt-16 font-bold"
 >
   <div class="flex justify-center flex-col items-center gap-2">
     <p>
@@ -12,12 +22,19 @@
   <div class="border hidden max-md:block"></div>
   <div class="flex justify-center flex-col items-center gap-2">
     <h1>Organisation committee:</h1>
-    <ul class="max-md:text-center">
-      <li>Mikko Hautamäki — Chairman</li>
-      <li>Timo Sirola — Secretary</li>
-      <li>Robert Björkenheim — Scientific program</li>
-      <li>Jani Puhakka — Company affiliation/Social program</li>
-      <li>Henrik Sandelin — Treasurer</li>
+    <ul class="max-md:text-center text-sm">
+      {
+        committee.map((member) => {
+          return (
+            <li class="flex justify-between gap-8">
+              <>
+                <span>{member.name}</span>
+                <span>{member.role}</span>
+              </>
+            </li>
+          );
+        })
+      }
     </ul>
   </div>
 
