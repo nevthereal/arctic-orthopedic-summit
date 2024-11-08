@@ -33,19 +33,16 @@ export const Nav = () => {
           <img src={logo.src} alt="soy logo" className="w-16" />
         </a>
       </nav>
+
       {/* MOBILE NAV */}
-      <div className="flex justify-between p-4 items-center">
+      <div className="flex justify-between px-6 py-4 items-center">
         <button
           onClick={handleNav}
-          className="p-0 bg-transparent ml-6 md:hidden text-xl"
+          className="p-1 bg-transparent md:hidden text-xl"
         >
           <i className="fa-solid fa-bars"></i>
         </button>
-        <a
-          href="https://soy.fi"
-          target="_blank"
-          className="flex gap-2 items-center md:hidden"
-        >
+        <a href="https://soy.fi" target="_blank" className="block md:hidden">
           <img src={logo.src} alt="soy logo" className="w-16" />
         </a>
       </div>
