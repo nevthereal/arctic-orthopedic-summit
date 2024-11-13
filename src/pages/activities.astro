@@ -64,7 +64,7 @@ const gallery: { default: ImageMetadata }[] = await Astro.glob(
         <div class="md:columns-3 mt-8 space-y-4">
           {
             gallery.map((img) => {
-              return <Image src={img.default} alt="" />;
+              return <Image loading={"lazy"} src={img.default} alt="" />;
             })
           }
         </div>
