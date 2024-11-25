@@ -7,6 +7,8 @@ interface Props {
 }
 
 const { title, desc } = Astro.props;
+
+const isProd = import.meta.env.PROD;
 ---
 
 <html lang="en">
@@ -16,10 +18,15 @@ const { title, desc } = Astro.props;
       src="https://kit.fontawesome.com/0c1fb969e1.js"
       crossorigin="anonymous"
       is:inline></script>
-    <script
-      defer
-      src="https://analytics.nevillebrem.com/script.js"
-      data-website-id="33ec12b8-18e2-4ef6-a1de-1bf0e43823c8"></script>
+    {
+      isProd && (
+        <script
+          defer
+          src="https://analytics.nevillebrem.com/script.js"
+          data-website-id="33ec12b8-18e2-4ef6-a1de-1bf0e43823c8"
+        />
+      )
+    }
     <link rel="stylesheet" href="https://use.typekit.net/uqc5wyf.css" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
