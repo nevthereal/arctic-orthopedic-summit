@@ -14,7 +14,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
 
     <div class="max-md:overflow-auto">
-      <table class="table-auto text-sm text-left border-collapse">
+      <p
+        class="portrait:block landscape:hidden text-center font-bold mt-4 text-red-400"
+      >
+        Please rotate your phone to landscape mode to show the scientific
+        program
+      </p>
+      <table
+        class="table-auto text-sm text-left border-collapse portrait:hidden landscape:block"
+      >
         <thead>
           <tr class="bg-gray-200">
             <th class="px-4 py-2 border">Time</th>
@@ -54,7 +62,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </tr>
         </thead>
         <tbody>
-          <!-- 07:30-08:00 Row -->
           <tr>
             <td class="px-4 py-2 border">07:30-08:00</td>
             <td class="px-4 py-2 border"></td>
@@ -65,7 +72,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <td class="px-4 py-2 border italic bg-blue-200">Registration</td>
           </tr>
 
-          <!-- 08:00-11:00 Row -->
           <tr>
             <td class="px-4 py-2 border">08:00-11:00</td>
             <td class="px-4 py-2 border"></td>
@@ -102,7 +108,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </td>
           </tr>
 
-          <!-- 11:15-12:30 Row -->
           <tr>
             <td class="px-4 py-2 border">11:15-12:30</td>
             <td></td>
@@ -113,7 +118,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <td class="px-4 py-2 border italic bg-yellow-200">Lunch</td>
           </tr>
 
-          <!-- 12:30-14:30 Row -->
           <tr>
             <td class="px-4 py-2 border">12:30-14:30</td>
             <td class="px-4 py-2 border"></td>
@@ -134,29 +138,32 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             >
           </tr>
 
-          <!-- 15:00-18:00 Row for Discussions 1 & 2 -->
           <tr>
             <td class="px-4 py-2 border">15:00-18:00</td>
             <td class="px-4 py-2 border italic bg-blue-200">Registration</td>
-            <td class="px-4 py-2 border bg-pink-200">
-              <p class="font-bold">Discussions 1</p>
-              <p class="font-normal">Feedback - from assessment to learning</p>
-              <p class="font-semibold">Teija Lund, Juho Hatakka</p>
+            <td class="px-4 py-2 border bg-red-200">
+              <p class="font-bold">Traumatology 2</p>
+              <p class="font-normal">
+                Primary arthroplasty in shoulder, elbow and knee trauma
+              </p>
+              <p class="font-semibold">Mikko Salmela</p>
             </td>
             <td class="px-4 py-2 border bg-pink-200">
-              <p class="font-bold">Discussions 2</p>
+              <p class="font-bold">Discussion 1</p>
+              <p class="font-normal">Feedback - from assessment to learning</p>
+              <p class="font-semibold">Teija Lund, Juho Hatakka</p>
+              <p class="font-bold mt-4">Discussion 2</p>
               <p class="font-normal">
                 How to use the KIDS Fracture Tool in practice
               </p>
               <p class="font-semibold">Topi Laaksonen, Kaj Zilliacus</p>
             </td>
-            <td class="px-4 py-2 border bg-red-200">
-              <p class="font-bold">Discussions 3</p>
+            <td></td>
+            <td class="px-4 py-2 border bg-pink-200">
+              <p class="font-bold">Discussion 3</p>
               <p class="font-normal">PF OA & PF Arthroplasty</p>
               <p class="font-semibold">Petri Silanpää</p>
-            </td>
-            <td class="px-4 py-2 border bg-red-200">
-              <p class="font-bold">Discussions 4</p>
+              <p class="font-bold mt-4">Discussion 4</p>
               <p class="font-normal">Controversies in bone tumors</p>
               <p class="font-semibold">Minna Laitinen, Lee Jays</p>
             </td>
