@@ -1,5 +1,7 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
   import logo from "../assets/logo.jpeg";
+  import { cubicInOut } from "svelte/easing";
 
   const links = [
     { href: "/scientific-program", text: "scientific program" },
@@ -50,21 +52,22 @@
 </div>
 
 <section class="block md:hidden">
-  <nav
-    class={nav
-      ? "z-30 h-screen bg-white uppercase block text-center"
-      : "hidden"}
-  >
-    <h1 class="text-4xl my-4 font-black">Navigation</h1>
-    <ul class="flex flex-col gap-4 font-medium">
-      <a href="/">Home</a>
-      {#each links as link}
-        <li>
-          <a href={link.href}>
-            {link.text}
-          </a>
-        </li>
-      {/each}
-    </ul>
-  </nav>
+  {#if nav}
+    <nav
+      class="z-30 h-screen bg-white uppercase block text-center"
+      transition:fade={{ duration: 200, easing: cubicInOut }}
+    >
+      <h1 class="text-4xl my-4 font-black">Navigation</h1>
+      <ul class="flex flex-col gap-4 font-medium">
+        <a href="/">Home</a>
+        {#each links as link}
+          <li>
+            <a href={link.href}>
+              {link.text}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </nav>
+  {/if}
 </section>
