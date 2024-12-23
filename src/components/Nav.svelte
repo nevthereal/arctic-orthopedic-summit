@@ -59,8 +59,15 @@
     <h1 class="text-4xl my-4 font-black">Navigation</h1>
     <ul class="flex flex-col gap-4 font-medium">
       <a href="/">Home</a>
-      {#each links as link}
-        <li>
+      {#each links as link, idx}
+        <li
+          in:slide|global={{
+            duration: 300,
+            easing: cubicInOut,
+            axis: "x",
+            delay: idx * 150,
+          }}
+        >
           <a href={link.href}>
             {link.text}
           </a>
