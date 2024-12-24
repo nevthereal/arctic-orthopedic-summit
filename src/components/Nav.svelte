@@ -60,14 +60,7 @@
     <ul class="flex flex-col gap-4 font-medium">
       <a href="/">Home</a>
       {#each links as link, idx}
-        <li
-          in:slide|global={{
-            duration: 300,
-            easing: cubicInOut,
-            axis: "x",
-            delay: idx * 150,
-          }}
-        >
+        <li>
           <a href={link.href}>
             {link.text}
           </a>
