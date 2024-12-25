@@ -10,7 +10,7 @@ const committee = [
 ---
 
 <footer
-  class="max-w-[90%] grid md:grid-cols-2 max-md:gap-2 mx-auto py-4 mt-16 font-bold"
+  class="max-w-[90%] flex flex-col-reverse md:flex-row md:justify-evenly max-md:gap-6 mx-auto py-4 mt-16 font-bold"
 >
   <div class="flex justify-center flex-col items-center gap-2">
     <p>
@@ -18,38 +18,22 @@ const committee = [
         >© Finnish Orthopaedic Association</a
       >
     </p>
-    <p>Contact: <a href="mailto:AOS2025@SOY.FI">AOS2025@SOY.FI</a></p>
+    <p>Contact: <a href="mailto:aos2025@soy.fi">aos2025@soy.fi</a></p>
   </div>
-  <div class="border hidden max-md:block"></div>
   <div class="flex justify-center flex-col items-center gap-4">
-    <h1>Organisation committee:</h1>
-    <ul class="text-xs flex flex-col gap-2">
+    <h1 class="text-lg">Organisation committee:</h1>
+    <ul class="text-xs flex flex-col gap-2 text-center">
       {
         committee.map((member) => {
           return (
-            <li class="flex justify-between gap-8">
-              <span class="text-left">{member.name}</span>
-              <span class="text-right">{member.role}</span>
+            <li>
+              <p>
+                {member.name} - <span class="font-normal">{member.role}</span>
+              </p>
             </li>
           );
         })
       }
     </ul>
   </div>
-
-  <!-- AOS2025@SOY.FI
-
-
-Organizing committee:
-
-
-Mikko Hautamäki — Chairman
-
-Timo Sirola — Secretary
-
-Robert Björkenheim — Scientific program
-
-Jani Puhakka — Company affiliation / Social program
-
-Henrik Sandelin — Treasurer -->
 </footer>
