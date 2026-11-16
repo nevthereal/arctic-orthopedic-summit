@@ -1,0 +1,26 @@
+---
+title: "History"
+description: "A little bit of history about the Arctic Orthopedic Summit"
+---
+
+# History
+
+The Finnish Orthopedic Association (SOY) was established on March 17, 1951. Over the decades, the association has developed into the largest specialty organization in the field of surgery in Finland.
+
+![image of conference](../../assets/conference3.jpg)
+
+SOY's structured course program began in 1970 with a two-day advanced training event focusing on lumbar pain syndromes, held at the Helsinki School of Economics. This inaugural course was highly successful, leading to the establishment of the association's first course committee in 1972. The committee's goal was to create a new course format, inspired by the AO courses in Switzerland and similar programs in Sweden. To aid in its development, the committee attended a surgical training event (Vidareutbildningskurs för blivande kirurger) in Östersund and Åre, Sweden, in the spring of 1973.
+
+![group pic of the committee](../../assets/comitee2.jpg)
+
+The first Lapinkurssi (Arctic Orthopedic Summit) was held in Rovaniemi, Lapland, in 1974. Initially, the course was hands-on, offering participants practical fracture fixation training using bone samples, following the classical AO course model. In its early years, the program even included arthroscopic surgery training with cadaver samples.
+
+Over the last 30 years, the course has shifted toward a more lecture-based and evidence-based medicine format. However, the tradition of small group discussions—referred to as “fireplace discussions”—has remained. While the number of participants has grown, pushing these groups beyond the original intimate settings, the relaxed atmosphere has been preserved, fostering open, constructive dialogue.
+
+Many cherished traditions have emerged from these courses, creating an environment where both long-standing and new friendships are formed. Highlights include family-friendly skiing competitions and a formal gala dinner, celebrated with an elegant yet welcoming ambiance.
+
+![gala](../../assets/gala4.jpg)
+
+Despite an increase in available domestic and international conferences, the course has consistently drawn a robust attendance of 150-180 participants in recent years. The event has only been canceled once, in 2022, due to the pandemic; it was subsequently held in 2023, marking a temporary shift from its traditional biennial schedule.
+
+Join us in making the 51st anniversary of the Arctic Orthopedic Summit an unforgettable experience!

@@ -1,14 +1,13 @@
 {
   "$schema": "https://assets.gtx.dev/config-schema.json",
   "defaultLocale": "en",
-  "locales": [
-    "fi"
-  ],
+  "locales": ["fi"],
   "files": {
     "json": {
-      "include": [
-        "messages/[locale].json"
-      ]
+      "include": ["messages/[locale].json"]
+    },
+    "md": {
+      "include": ["src/content/[locale]/**/*.md"]
     }
   },
   "options": {

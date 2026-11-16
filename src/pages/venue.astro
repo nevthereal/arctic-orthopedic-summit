@@ -1,91 +1,25 @@
 ---
-import { m } from "../paraglide/messages.js";
-const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MarkdownContent from "../components/MarkdownContent.astro";
+const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+const content = import.meta.glob<
+  import("astro").MarkdownInstance<Record<string, string>>
+>("../content/*/venue.md", { eager: true });
+const { frontmatter } = content[`../content/${locale}/venue.md`];
 ---
 
-<BaseLayout
-  title={m.venue({}, { locale })}
-  desc={m.venue_how_to_get_to_the_arctic_orthopedic({}, { locale })}
->
+<BaseLayout title={frontmatter.title} desc={frontmatter.description}>
   <main class="mx-8 md:mx-16">
     <div class="md:grid md:grid-cols-2 gap-8">
-      <div class="prose">
-        <h1>{m.venue({}, { locale })}</h1>
-        <h3>{m.location_levi_lapland({}, { locale })}</h3>
-        <h3>
-          {
-            m.congress_venue_hotel_hullu_poro_levi_mountain_centre(
-              {},
-              { locale },
-            )
-          }
-        </h3>
-        <p>
-          {m.participants_of_the_congress_will_have_a_variety({}, { locale })}{
-            " "
-          }
-          <em> {m.limited({}, { locale })} </em>{" "}
-          {
-            m.room_quota_has_been_reserved_for_participants_including(
-              {},
-              { locale },
-            )
-          }
-        </p>
-        <p>
-          {
-            m.participants_can_choose_from_a_range_of_accommodations(
-              {},
-              { locale },
-            )
-          }
-        </p>
-        <ul>
-          <li>
-            {m.hotel_hullu_poro({}, { locale })}{" "}
-            <a href="https://hulluporo.fi" target="_blank">
-              {m.hulluporo_fi({}, { locale })}
-            </a>{" "}
-            {m.with_the_promo_code({}, { locale })}
-            <br />
-            <strong> {m.arcticortho2025({}, { locale })} </strong>
-          </li>
-          <li>
-            {m.cabins_and_other_options({}, { locale })}{" "}
-            <a href="https://levi.fi" target="_blank">
-              {m.levi_fi({}, { locale })}
-            </a>
-          </li>
-        </ul>
-        <p>
-          {
-            m.both_options_provide_comfortable_and_accessible_lodging_for(
-              {},
-              { locale },
-            )
-          }
-        </p>
-        <iframe
+      <div>
+        <MarkdownContent name="venue" class="prose" /><iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1506.9934144192425!2d24.80723607790104!3d67.8081066559591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45d24d5a87b3f0fd%3A0xd00dac320805b483!2sHullu%20Poro%20(Hotel%20Crazy%20Reindeer)!5e0!3m2!1sde!2sch!4v1727347059773!5m2!1sde!2sch"
           style="border:0;"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           class="w-full max-md:h-[300px] md:h-[500px] mt-4"></iframe>
-      </div>
-      <div class="max-md:mt-8 prose">
-        <h1>{m.travel({}, { locale })}</h1>
-        <p>
-          {
-            m.the_nearest_airport_is_kittil_airport_finland_located(
-              {},
-              { locale },
-            )
-          }
-        </p>
-      </div>
+      </div><MarkdownContent name="travel" class="prose max-md:mt-8" />
     </div>
   </main>
 </BaseLayout>

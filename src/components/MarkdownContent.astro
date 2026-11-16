@@ -1,0 +1,62 @@
+---
+import type { MarkdownInstance } from "astro";
+interface Props {
+  name: string;
+  class?: string;
+}
+const { name, class: className } = Astro.props;
+const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+const modules = import.meta.glob<MarkdownInstance<Record<string, string>>>(
+  "../content/**/*.md",
+  { eager: true },
+);
+const entry = modules[`../content/${locale}/${name}.md`];
+if (!entry) throw new Error(`Missing ${locale} Markdown content: ${name}`);
+const { Content } = entry;
+---
+
+<div class={className}><Content /></div>
+<style>
+  div :global(a[href="/program.pdf"]), div :global(a[href="https://form.eventos.fi/6ef398314470a4ea"]) {
+    display: inline-block; background: #7dd3fc; padding: 1rem; text-decoration: none;
+  }
+
+  div :global(img) {
+    border-radius: 0.125rem;
+  }
+  .program :global(table) {
+    min-width: 1050px;
+    font-size: 0.875rem;
+  }
+  .program :global(th),
+  .program :global(td) {
+    border: 1px solid #d1d5db;
+    padding: 0.5rem 1rem;
+    vertical-align: top;
+  }
+  .program :global(thead) {
+    background: #e5e7eb;
+  }
+  .program :global(tbody tr:nth-child(1)) {
+    background: #bfdbfe;
+  }
+  .program :global(tbody tr:nth-child(3)) {
+    background: #fef08a;
+  }
+  .program :global(tbody tr:nth-child(4)),
+  .program :global(tbody tr:nth-child(6)) {
+    background: #e5e7eb;
+  }
+  .program :global(tbody tr:nth-child(2) td:nth-child(3)),
+  .program :global(tbody tr:nth-child(2) td:nth-child(4)),
+  .program :global(tbody tr:nth-child(5) td:nth-child(3)) {
+    background: #fecaca;
+  }
+  .program :global(tbody tr:nth-child(2) td:nth-child(n + 5)) {
+    background: #bbf7d0;
+  }
+  .program :global(tbody tr:nth-child(5) td:nth-child(4)),
+  .program :global(tbody tr:nth-child(5) td:nth-child(6)) {
+    background: #fbcfe8;
+  }
+</style>

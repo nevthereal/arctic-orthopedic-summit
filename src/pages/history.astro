@@ -1,72 +1,15 @@
 ---
-import { m } from "../paraglide/messages.js";
-const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
-
-import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Conference from "../assets/conference3.jpg";
-import Gala from "../assets/gala4.jpg";
-import Comittee from "../assets/comitee2.jpg";
+import MarkdownContent from "../components/MarkdownContent.astro";
+const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+const content = import.meta.glob<
+  import("astro").MarkdownInstance<Record<string, string>>
+>("../content/*/history.md", { eager: true });
+const { frontmatter } = content[`../content/${locale}/history.md`];
 ---
 
-<BaseLayout
-  title={m.history({}, { locale })}
-  desc={m.a_little_bit_of_history_about_the_arctic({}, { locale })}
->
-  <main class="mx-8 md:mx-auto mb-8 prose">
-    <h1>{m.history({}, { locale })}</h1>
-    <p>
-      {
-        m.the_finnish_orthopedic_association_soy_was_established_on(
-          {},
-          { locale },
-        )
-      }
-    </p>
-    <Image
-      loading={"lazy"}
-      quality={"mid"}
-      src={Conference}
-      alt={m.image_of_conference({}, { locale })}
-    />
-    <p>{m.soy_s_structured_course_program_began_in_1970({}, { locale })}</p>
-    <Image
-      loading={"lazy"}
-      quality={"mid"}
-      src={Comittee}
-      alt={m.group_pic_of_the_committee({}, { locale })}
-    />
-    <p>
-      {
-        m.the_first_lapinkurssi_arctic_orthopedic_summit_was_held(
-          {},
-          { locale },
-        )
-      }
-    </p>
-    <p>{m.over_the_last_30_years_the_course_has({}, { locale })}</p>
-    <p>
-      {
-        m.many_cherished_traditions_have_emerged_from_these_courses(
-          {},
-          { locale },
-        )
-      }
-    </p>
-    <Image
-      loading={"lazy"}
-      quality={"mid"}
-      src={Gala}
-      alt={m.gala({}, { locale })}
-    />
-    <p>
-      {
-        m.despite_an_increase_in_available_domestic_and_international(
-          {},
-          { locale },
-        )
-      }
-    </p>
-    <p>{m.join_us_in_making_the_51st_anniversary_of({}, { locale })}</p>
+<BaseLayout title={frontmatter.title} desc={frontmatter.description}>
+  <main class="mx-8 md:mx-auto mb-8 max-w-prose">
+    <MarkdownContent name="history" class="prose" />
   </main>
 </BaseLayout>

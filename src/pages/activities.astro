@@ -1,10 +1,13 @@
 ---
-import { m } from "../paraglide/messages.js";
-const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MarkdownContent from "../components/MarkdownContent.astro";
+const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+const content = import.meta.glob<
+  import("astro").MarkdownInstance<Record<string, string>>
+>("../content/*/activities.md", { eager: true });
+const { frontmatter } = content[`../content/${locale}/activities.md`];
 import { Image } from "astro:assets";
-
+import { m } from "../paraglide/messages.js";
 const gallery = Object.values(
   import.meta.glob<{ default: ImageMetadata }>("../assets/activities/*.jpg", {
     eager: true,
@@ -12,79 +15,22 @@ const gallery = Object.values(
 );
 ---
 
-<BaseLayout
-  title={m.activities({}, { locale })}
-  desc={m.the_activities_you_can_engane_in_at_the({}, { locale })}
->
+<BaseLayout title={frontmatter.title} desc={frontmatter.description}>
   <main class="mx-8 md:mx-16 mb-8">
-    <div>
-      <div>
-        <h1 class="text-3xl mb-8">{m.activities({}, { locale })}</h1>
-        <div class="prose">
-          <p>
-            {m.a_diverse_range_of_activities_is_available_for({}, { locale })}
-          </p>
-          <ul>
-            <li>
-              <a href="https://www.levi.fi/en/" target="_blank">
-                {m.alpine_skiing({}, { locale })}
-              </a>
-            </li>
-            <li>{m.cross_country_skiing({}, { locale })}</li>
-            <li>
-              <a href="https://www.laplandsafaris.com/en" target="_blank">
-                {m.snowmobiling({}, { locale })}
-              </a>
-            </li>
-            <li>
-              <a href="https://levihuskypark.fi/en/" target="_blank">
-                {m.husky({}, { locale })}
-              </a>
-            </li>
-            <li>
-              <a href="https://sammuntupa.fi/en_US" target="_blank">
-                {m.reindeer_tours({}, { locale })}
-              </a>
-            </li>
-            <li>
-              <a href="https://www.levi.fi/en/" target="_blank">
-                {m.restaurants({}, { locale })}
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.levi.fi/en/activities/wellbeing/sauna/"
-                target="_blank"
-              >
-                {m.sauna({}, { locale })}
-              </a>
-            </li>
-            <li>
-              <a href="https://levi.northernlightsvillage.com/">
-                {m.northern_lights({}, { locale })}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <h1 class="text-3xl mb-4 mt-8">{m.image_gallery({}, { locale })}</h1>
-        <p>{m.some_impressions_from_past_events({}, { locale })}</p>
-        <div class="md:columns-3 mt-8 space-y-4">
-          {
-            gallery.map((img) => {
-              return (
-                <Image
-                  loading={"lazy"}
-                  src={img.default}
-                  alt={m.activity({}, { locale })}
-                  quality="mid"
-                />
-              );
-            })
-          }
-        </div>
-      </div>
+    <MarkdownContent name="activities" class="prose" /><MarkdownContent
+      name="gallery"
+      class="prose mt-8"
+    /><div class="md:columns-3 mt-8 space-y-4">
+      {
+        gallery.map((img) => (
+          <Image
+            loading="lazy"
+            src={img.default}
+            alt={m.activity({}, { locale })}
+            quality="mid"
+          />
+        ))
+      }
     </div>
   </main>
 </BaseLayout>
