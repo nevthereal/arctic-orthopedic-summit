@@ -1,0 +1,10 @@
+{
+  "name": "Arctic Orthopedic Summit",
+  "install": "bash .cursor/install.sh",
+  "ports": [
+    {
+      "name": "web",
+      "port": 4321
+    }
+  ]
+}
