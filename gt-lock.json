@@ -4,15 +4,135 @@
   "entries": [
     {
       "fileId": "5d9e5048516ec2fe83ca06813e79c3b8b44c6c96294f25c7311db311e28eeaee",
-      "versionId": "00356be3733e88ca1488f4e91bd946ee7b672a3d43cb1e40ac706170c9aa5612",
+      "versionId": "40ca623e3547d0badf458fba95ba79e93cd1e1c72357bf003087d14d9084d9a1",
       "translations": {
         "fi": {
-          "updatedAt": "2026-11-16T09:19:29.496Z",
+          "updatedAt": "2026-11-16T14:31:09.386Z",
           "fileName": "messages/fi.json",
-          "postProcessHash": "32fa55628a5d7bce8beda1996ebce5d7db7f1046d574e3a50e3e9999eaa03f72"
+          "postProcessHash": "996a850974a2835688389cedc05586662bda32e405e2a5255c080c07eb415765"
         }
       },
       "fileName": "messages/en.json"
+    },
+    {
+      "fileId": "3a8203d163a1f2d6a2686f7377c3b8a6bd0c807259ed825558a9a24513040cd9",
+      "versionId": "7cfd805f47716ce780c61a54f8c9d31d70935a88b2f421872372fc2c233e35b2",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.381Z",
+          "fileName": "src/content/fi/gallery.md",
+          "postProcessHash": "5f52824af28211059ce406165fbfd1359b0ad37fc878f199751ea83a0f342cfc"
+        }
+      },
+      "fileName": "src/content/en/gallery.md"
+    },
+    {
+      "fileId": "725487cc30e4cc37183fe5341eaf51f79d355e0d0d6510cb006f172245d8feca",
+      "versionId": "93f32ab9b58dbc139907378d1c99f4a260be151dcc3019d02d9b262c29f72268",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.386Z",
+          "fileName": "src/content/fi/review-2.md",
+          "postProcessHash": "e501de7841d6fdf17758d530fa5f26eb3e81a6ed8eadc15a0509491b0805538f"
+        }
+      },
+      "fileName": "src/content/en/review-2.md"
+    },
+    {
+      "fileId": "77aac52645e20cdcd46ecf35d427409804b9661091a4fcd665e795deaac9d721",
+      "versionId": "506c7970c9dbc0a39e901f04aa534efc07516678019594e54ea1ab580883bf3b",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.387Z",
+          "fileName": "src/content/fi/review-1.md",
+          "postProcessHash": "5c153a19f017b4825acc2f83a6a61021b28e112e8c749c5da5f651212f4674a0"
+        }
+      },
+      "fileName": "src/content/en/review-1.md"
+    },
+    {
+      "fileId": "95e829be186fd53e4f09b6ff940eea46d341baec680cb9e045bad6e4c3c13ef2",
+      "versionId": "2dbef0035097d32941388a465447673305ea8288dbd8d472feaff20e1bbde339",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.387Z",
+          "fileName": "src/content/fi/travel.md",
+          "postProcessHash": "dd1553f7840f0199de875fd5abf58f0bc645418bc5d07b93761ba8e595fc5130"
+        }
+      },
+      "fileName": "src/content/en/travel.md"
+    },
+    {
+      "fileId": "9791eed319b31ffd1669837cbc000b5b9aecce8ee1616320ecb854ab3381152c",
+      "versionId": "3f635c40d21f65a07c7d184f73bdac1a52868c2208dc3ad094aa66f85d9a8953",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.388Z",
+          "fileName": "src/content/fi/registration.md",
+          "postProcessHash": "bf0ac0e6610535e53302d9d576ff23200f4fe7c0ffb77cb11ec606a9f007d514"
+        }
+      },
+      "fileName": "src/content/en/registration.md"
+    },
+    {
+      "fileId": "0a46c8d10d331bf7b759e7d7354f986dc97867394dca4ab5f4f5faeaed95ce82",
+      "versionId": "beebb018f9b50ef53aad3dd3cedffe617260df5de518db626aded4816837b518",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.388Z",
+          "fileName": "src/content/fi/activities.md",
+          "postProcessHash": "814d16fb2939a535044f308d0f0295a883dfc7d7096dcc979ea44711985a7785"
+        }
+      },
+      "fileName": "src/content/en/activities.md"
+    },
+    {
+      "fileId": "aadcc2e58f3fd0c08680b20342041e63738b8dac62238ae14c7d7ed6f67301c8",
+      "versionId": "a81a9cf545868d17a12218c0300332035076203e019a498587fb21cc85586492",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.388Z",
+          "fileName": "src/content/fi/venue.md",
+          "postProcessHash": "202c467ac3955133ff7118c7b69a0f315b2b8a02af160aaeaf3f80caec29d4d2"
+        }
+      },
+      "fileName": "src/content/en/venue.md"
+    },
+    {
+      "fileId": "60f5f4f14c84937f99167340491692c45c3f94192d9222f8aeec7ff3051581f4",
+      "versionId": "6878cb9dc1c86bc9353709877515dc3f70609688fec03c6f95da83747b71f124",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.389Z",
+          "fileName": "src/content/fi/home.md",
+          "postProcessHash": "1ed02ac4c502fdd72aba6445fea4083264c9fe827b146bdf99053541643f18d6"
+        }
+      },
+      "fileName": "src/content/en/home.md"
+    },
+    {
+      "fileId": "4987fc8bdea87da0d213e98eea9249462d0706989a9ebf043cde4299af83db18",
+      "versionId": "ec869b70c6559cdf598d3ca2a4688a7fa0f91b1d903c9d315d61126635fb1c6e",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.389Z",
+          "fileName": "src/content/fi/scientific-program.md",
+          "postProcessHash": "49c7f74ce3f755d1ce689659cebe42986aff0c4f4b7c641bab572f4192f70a54"
+        }
+      },
+      "fileName": "src/content/en/scientific-program.md"
+    },
+    {
+      "fileId": "83dfcc7dae6c3f816ecf9129808cc820735b03ea1d292dbebc56763eaf4138bd",
+      "versionId": "449ebc0dcd3181df6d0e7895eb6657d54f0b338fe8214c48c6469bf2df75a9a6",
+      "translations": {
+        "fi": {
+          "updatedAt": "2026-11-16T14:31:09.389Z",
+          "fileName": "src/content/fi/history.md",
+          "postProcessHash": "629bb94d975c8eb01ac036805bd1842698b90acfbfb92dff31db5eefbffa4b14"
+        }
+      },
+      "fileName": "src/content/en/history.md"
     }
   ]
 }

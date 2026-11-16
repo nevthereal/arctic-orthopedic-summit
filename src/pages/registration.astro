@@ -1,92 +1,15 @@
 ---
-import { m } from "../paraglide/messages.js";
-const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MarkdownContent from "../components/MarkdownContent.astro";
+const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+const content = import.meta.glob<
+  import("astro").MarkdownInstance<Record<string, string>>
+>("../content/*/registration.md", { eager: true });
+const { frontmatter } = content[`../content/${locale}/registration.md`];
 ---
 
-<BaseLayout
-  title={m.registration({}, { locale })}
-  desc={m.registration_page_prices_of_the_arctic_orthopedic_summit(
-    {},
-    { locale },
-  )}
->
-  <main class="mx-8 md:mx-auto mb-8 prose">
-    <h1>{m.registration({}, { locale })}</h1>
-    <p>{m.early_registration_before_15_2_2025_will_bring({}, { locale })}</p>
-    <a
-      class="bg-sky-300 p-4 no-underline"
-      href="https://form.eventos.fi/6ef398314470a4ea"
-      target="_blank"
-    >
-      {m.registration_link({}, { locale })}
-    </a>
-
-    <h2>{m.prices({}, { locale })}</h2>
-    <h3>{m.early_registration({}, { locale })}</h3>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th> {m.doctors({}, { locale })} </th>
-          <th> {m.residents({}, { locale })} </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td> {m.full_course({}, { locale })} </td>
-          <td>580€</td>
-          <td>300€</td>
-        </tr>
-        <tr>
-          <td> {m.half_course({}, { locale })} </td>
-          <td>440€</td>
-          <td>220€</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3>{m.late_registration_after_15_2_2025({}, { locale })}</h3>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th> {m.doctors({}, { locale })} </th>
-          <th> {m.residents({}, { locale })} </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td> {m.full_course({}, { locale })} </td>
-          <td>870€</td>
-          <td>450€</td>
-        </tr>
-        <tr>
-          <td> {m.half_course({}, { locale })} </td>
-          <td>660€</td>
-          <td>330€</td>
-        </tr>
-      </tbody>
-    </table>
-    <aside class="text-sm">
-      {m.the_half_course_is_from_sun_to_wed({}, { locale })}
-    </aside>
-    <h3>{m.gala_dinner({}, { locale })}</h3>
-    <p>
-      {m.the({}, { locale })}{" "}
-      <strong> {m.gala_dinner({}, { locale })} </strong>{" "}
-      {m.is_not_included_and_will_cost({}, { locale })}{" "}
-      <strong>100€</strong>
-    </p>
-    <h3>{m.non_physicians({}, { locale })}</h3>
-    <p>
-      {m.if_you_are_not_a_physician_the_course({}, { locale })}{" "}
-      <strong>960€</strong>
-    </p>
-    <h2>{m.contact({}, { locale })}</h2>
-    <p>
-      {m.if_you_have_any_questions_about_the_congress({}, { locale })}{" "}
-      <a href="mailto:aos2025@soy.fi"> {m.aos2025_soy_fi({}, { locale })} </a>
-    </p>
+<BaseLayout title={frontmatter.title} desc={frontmatter.description}>
+  <main class="mx-8 md:mx-auto mb-8 max-w-prose">
+    <MarkdownContent name="registration" class="prose" />
   </main>
 </BaseLayout>

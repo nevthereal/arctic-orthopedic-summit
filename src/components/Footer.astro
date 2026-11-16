@@ -1,14 +1,15 @@
 ---
-import { m } from "../paraglide/messages.js";
+import { getMessages } from "../lib/i18n";
 const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+const labels = getMessages(locale);
 
 const committee = [
-  { name: "Mikko Hautamäki", role: m.chair({}, { locale }) },
-  { name: "Timo Sirola", role: m.secretary({}, { locale }) },
-  { name: "Robert Björkenheim", role: m.scientific_program({}, { locale }) },
-  { name: "Jani Puhakka", role: m.affiliation({}, { locale }) },
-  { name: "Henrik Sandelin", role: m.treasurer({}, { locale }) },
-  { name: "Heidi Danielson", role: m.member({}, { locale }) },
+  { name: "Mikko Hautamäki", role: labels.chair },
+  { name: "Timo Sirola", role: labels.secretary },
+  { name: "Robert Björkenheim", role: labels.scientific_program },
+  { name: "Jani Puhakka", role: labels.affiliation },
+  { name: "Henrik Sandelin", role: labels.treasurer },
+  { name: "Heidi Danielson", role: labels.member },
 ];
 ---
 
@@ -18,16 +19,16 @@ const committee = [
   <div class="flex justify-center flex-col items-center gap-2">
     <p>
       <a href="https://www.soy.fi/" target="_blank">
-        {m.finnish_orthopaedic_association({}, { locale })}
+        {labels.finnish_orthopaedic_association}
       </a>
     </p>
     <p>
-      {m.contact({}, { locale })}{" "}
-      <a href="mailto:aos2025@soy.fi"> {m.aos2025_soy_fi({}, { locale })} </a>
+      {labels.contact}{" "}
+      <a href="mailto:aos2025@soy.fi"> {labels.aos2025_soy_fi} </a>
     </p>
   </div>
   <div class="flex justify-center flex-col items-center gap-4">
-    <h1 class="text-lg">{m.organisation_committee({}, { locale })}</h1>
+    <h1 class="text-lg">{labels.organisation_committee}</h1>
     <ul class="text-xs text-center">
       {
         committee.map((member) => {

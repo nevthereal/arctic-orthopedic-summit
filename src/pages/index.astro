@@ -1,55 +1,29 @@
 ---
-import { m } from "../paraglide/messages.js";
-const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MarkdownContent from "../components/MarkdownContent.astro";
+const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+const content = import.meta.glob<
+  import("astro").MarkdownInstance<Record<string, string>>
+>("../content/*/home.md", { eager: true });
+const { frontmatter } = content[`../content/${locale}/home.md`];
 import { Image } from "astro:assets";
-import Review from "../components/Review.astro";
 import Banner from "../assets/banner.jpg";
 ---
 
-<BaseLayout
-  title={m.home({}, { locale })}
-  desc={m.homepage_of_the_26th_arctic_orthopedic_summit({}, { locale })}
->
+<BaseLayout title={frontmatter.title} desc={frontmatter.description}>
   <section class="grid md:grid-cols-2 p-8 pt-0 md:pt-8 pb-16">
-    <Image src={Banner} alt={m.banner_of_aos({}, { locale })} loading="eager" />
-    <div class="md:mx-16 md:my-auto mt-16">
-      <h1 class="text-3xl mb-4">
-        {m.event_26th_arctic_orthopedic_summit_2025({}, { locale })}
-      </h1>
-      <p>
-        {m.the({}, { locale })}{" "}
-        <a
-          class="underline"
-          href="https://www.soy.fi/koulutus/"
-          target="_blank"
-        >
-          {m.finnish_orthopedic_association({}, { locale })}
-        </a>{" "}
-        {m.invites_you_to_the_26th_arctic_orthopedic_summit({}, { locale })}{
-          " "
-        }
-        <a
-          href={locale === "fi" ? "/fi/registration" : "/registration"}
-          class="underline"
-        >
-          {m.register_here({}, { locale })}
-        </a>.
-      </p>
-    </div>
+    <Image src={Banner} alt="Arctic Orthopedic Summit" loading="eager" />
+    <MarkdownContent
+      name="home"
+      class="md:mx-16 md:my-auto mt-16 prose prose-h1:text-3xl"
+    />
   </section>
-  <section class="grid gap-6 md:grid-cols-2 mx-8">
-    <Review
-      author={m.jani_puhakka_orhtopedic_surgeon_from_zurich({}, { locale })}
-      body={m.great_event_and_venue_looking_forward_to_meet({}, { locale })}
-    />
-    <Review
-      author={m.leo_kronberger_orthopedic_surgeon_from_graz({}, { locale })}
-      body={m.great_orthopedic_congress_with_international_faculty_and_stunning(
-        {},
-        { locale },
-      )}
-    />
+  <section class="grid gap-6 md:grid-cols-2 mx-8 prose max-w-none">
+    {["review-1", "review-2"].map(name => (
+      <div class="flex items-center gap-10">
+        <i class="fa-solid fa-user-doctor fa-2xl text-sky-300"></i>
+        <MarkdownContent {name} />
+      </div>
+    ))}
   </section>
 </BaseLayout>

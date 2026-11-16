@@ -9,16 +9,14 @@
       "include": [
         "messages/[locale].json"
       ]
+    },
+    "md": {
+      "include": [
+        "src/content/[locale]/**/*.md"
+      ]
     }
   },
   "options": {
-    "saveLocal": true,
-    "jsonSchema": {
-      "messages/*.json": {
-        "include": [
-          "$..[?(typeof @ === 'string' && @property !== '$schema' && !(typeof @property === 'number' && (@parentProperty === 'declarations' || @parentProperty === 'selectors')))]"
-        ]
-      }
-    }
+    "saveLocal": true
   }
 }
