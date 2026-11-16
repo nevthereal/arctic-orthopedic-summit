@@ -5,8 +5,10 @@ const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 
-const gallery: { default: ImageMetadata }[] = await Astro.glob(
-  "../assets/activities/*.jpg",
+const gallery = Object.values(
+  import.meta.glob<{ default: ImageMetadata }>("../assets/activities/*.jpg", {
+    eager: true,
+  }),
 );
 ---
 
@@ -21,48 +23,48 @@ const gallery: { default: ImageMetadata }[] = await Astro.glob(
         <div class="prose">
           <p>
             {m.a_diverse_range_of_activities_is_available_for({}, { locale })}
-            <ul>
-              <li>
-                <a href="https://www.levi.fi/en/" target="_blank">
-                  {m.alpine_skiing({}, { locale })}
-                </a>
-              </li>
-              <li>{m.cross_country_skiing({}, { locale })}</li>
-              <li>
-                <a href="https://www.laplandsafaris.com/en" target="_blank">
-                  {m.snowmobiling({}, { locale })}
-                </a>
-              </li>
-              <li>
-                <a href="https://levihuskypark.fi/en/" target="_blank">
-                  {m.husky({}, { locale })}
-                </a>
-              </li>
-              <li>
-                <a href="https://sammuntupa.fi/en_US" target="_blank">
-                  {m.reindeer_tours({}, { locale })}
-                </a>
-              </li>
-              <li>
-                <a href="https://www.levi.fi/en/" target="_blank">
-                  {m.restaurants({}, { locale })}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.levi.fi/en/activities/wellbeing/sauna/"
-                  target="_blank"
-                >
-                  {m.sauna({}, { locale })}
-                </a>
-              </li>
-              <li>
-                <a href="https://levi.northernlightsvillage.com/">
-                  {m.northern_lights({}, { locale })}
-                </a>
-              </li>
-            </ul>
           </p>
+          <ul>
+            <li>
+              <a href="https://www.levi.fi/en/" target="_blank">
+                {m.alpine_skiing({}, { locale })}
+              </a>
+            </li>
+            <li>{m.cross_country_skiing({}, { locale })}</li>
+            <li>
+              <a href="https://www.laplandsafaris.com/en" target="_blank">
+                {m.snowmobiling({}, { locale })}
+              </a>
+            </li>
+            <li>
+              <a href="https://levihuskypark.fi/en/" target="_blank">
+                {m.husky({}, { locale })}
+              </a>
+            </li>
+            <li>
+              <a href="https://sammuntupa.fi/en_US" target="_blank">
+                {m.reindeer_tours({}, { locale })}
+              </a>
+            </li>
+            <li>
+              <a href="https://www.levi.fi/en/" target="_blank">
+                {m.restaurants({}, { locale })}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.levi.fi/en/activities/wellbeing/sauna/"
+                target="_blank"
+              >
+                {m.sauna({}, { locale })}
+              </a>
+            </li>
+            <li>
+              <a href="https://levi.northernlightsvillage.com/">
+                {m.northern_lights({}, { locale })}
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div>

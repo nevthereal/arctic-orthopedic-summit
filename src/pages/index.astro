@@ -19,15 +19,17 @@ import Banner from "../assets/banner.jpg";
         {m.event_26th_arctic_orthopedic_summit_2025({}, { locale })}
       </h1>
       <p>
-        {m.the({}, { locale })}
+        {m.the({}, { locale })}{" "}
         <a
           class="underline"
           href="https://www.soy.fi/koulutus/"
           target="_blank"
         >
           {m.finnish_orthopedic_association({}, { locale })}
-        </a>
-        {m.invites_you_to_the_26th_arctic_orthopedic_summit({}, { locale })}
+        </a>{" "}
+        {m.invites_you_to_the_26th_arctic_orthopedic_summit({}, { locale })}{
+          " "
+        }
         <a
           href={locale === "fi" ? "/fi/registration" : "/registration"}
           class="underline"

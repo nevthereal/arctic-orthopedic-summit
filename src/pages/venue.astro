@@ -23,8 +23,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           }
         </h3>
         <p>
-          {m.participants_of_the_congress_will_have_a_variety({}, { locale })}
-          <em> {m.limited({}, { locale })} </em>
+          {m.participants_of_the_congress_will_have_a_variety({}, { locale })}{
+            " "
+          }
+          <em> {m.limited({}, { locale })} </em>{" "}
           {
             m.room_quota_has_been_reserved_for_participants_including(
               {},
@@ -39,23 +41,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               { locale },
             )
           }
-          <ul>
-            <li>
-              {m.hotel_hullu_poro({}, { locale })}
-              <a href="https://hulluporo.fi" target="_blank">
-                {m.hulluporo_fi({}, { locale })}
-              </a>
-              {m.with_the_promo_code({}, { locale })}
-              <br />
-              <strong> {m.arcticortho2025({}, { locale })} </strong>
-            </li>
-            <li>
-              {m.cabins_and_other_options({}, { locale })}
-              <a href="https://levi.fi" target="_blank">
-                {m.levi_fi({}, { locale })}
-              </a>
-            </li>
-          </ul>
+        </p>
+        <ul>
+          <li>
+            {m.hotel_hullu_poro({}, { locale })}{" "}
+            <a href="https://hulluporo.fi" target="_blank">
+              {m.hulluporo_fi({}, { locale })}
+            </a>{" "}
+            {m.with_the_promo_code({}, { locale })}
+            <br />
+            <strong> {m.arcticortho2025({}, { locale })} </strong>
+          </li>
+          <li>
+            {m.cabins_and_other_options({}, { locale })}{" "}
+            <a href="https://levi.fi" target="_blank">
+              {m.levi_fi({}, { locale })}
+            </a>
+          </li>
+        </ul>
+        <p>
           {
             m.both_options_provide_comfortable_and_accessible_lodging_for(
               {},

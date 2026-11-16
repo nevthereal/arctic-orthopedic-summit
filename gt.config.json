@@ -1,0 +1,24 @@
+{
+  "$schema": "https://assets.gtx.dev/config-schema.json",
+  "defaultLocale": "en",
+  "locales": [
+    "fi"
+  ],
+  "files": {
+    "json": {
+      "include": [
+        "messages/[locale].json"
+      ]
+    }
+  },
+  "options": {
+    "saveLocal": true,
+    "jsonSchema": {
+      "messages/*.json": {
+        "include": [
+          "$..[?(typeof @ === 'string' && @property !== '$schema' && !(typeof @property === 'number' && (@parentProperty === 'declarations' || @parentProperty === 'selectors')))]"
+        ]
+      }
+    }
+  }
+}

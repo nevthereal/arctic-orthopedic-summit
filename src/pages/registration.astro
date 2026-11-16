@@ -73,19 +73,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </aside>
     <h3>{m.gala_dinner({}, { locale })}</h3>
     <p>
-      {m.the({}, { locale })}
-      <strong> {m.gala_dinner({}, { locale })} </strong>
-      {m.is_not_included_and_will_cost({}, { locale })}
+      {m.the({}, { locale })}{" "}
+      <strong> {m.gala_dinner({}, { locale })} </strong>{" "}
+      {m.is_not_included_and_will_cost({}, { locale })}{" "}
       <strong>100€</strong>
     </p>
     <h3>{m.non_physicians({}, { locale })}</h3>
     <p>
-      {m.if_you_are_not_a_physician_the_course({}, { locale })}
+      {m.if_you_are_not_a_physician_the_course({}, { locale })}{" "}
       <strong>960€</strong>
     </p>
     <h2>{m.contact({}, { locale })}</h2>
     <p>
-      {m.if_you_have_any_questions_about_the_congress({}, { locale })}
+      {m.if_you_have_any_questions_about_the_congress({}, { locale })}{" "}
       <a href="mailto:aos2025@soy.fi"> {m.aos2025_soy_fi({}, { locale })} </a>
     </p>
   </main>

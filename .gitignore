@@ -25,3 +25,8 @@ src/paraglide/
 project.inlang/cache/
 
 .vercel/
+
+# Local translation credentials
+.env.*
+!.env.example
+.vercel
