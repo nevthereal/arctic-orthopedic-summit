@@ -1,38 +1,53 @@
 ---
+import { m } from "../paraglide/messages.js";
+const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import Review from "../components/Review.astro";
 import Banner from "../assets/banner.jpg";
 ---
 
-<BaseLayout title="Home" desc="Homepage of the 26th Arctic Orthopedic Summit">
+<BaseLayout
+  title={m.home({}, { locale })}
+  desc={m.homepage_of_the_26th_arctic_orthopedic_summit({}, { locale })}
+>
   <section class="grid md:grid-cols-2 p-8 pt-0 md:pt-8 pb-16">
-    <Image src={Banner} alt="banner of aos" loading="eager" />
+    <Image src={Banner} alt={m.banner_of_aos({}, { locale })} loading="eager" />
     <div class="md:mx-16 md:my-auto mt-16">
-      <h1 class="text-3xl mb-4">26th Arctic Orthopedic Summit 2025</h1>
+      <h1 class="text-3xl mb-4">
+        {m.event_26th_arctic_orthopedic_summit_2025({}, { locale })}
+      </h1>
       <p>
-        The <a
+        {m.the({}, { locale })}
+        <a
           class="underline"
           href="https://www.soy.fi/koulutus/"
-          target="_blank">Finnish Orthopedic Association</a
-        > invites you to the 26th Arctic Orthopedic Summit, a biannual event dedicated
-        to advancing orthopedic knowledge and practice. Held in Finnish Lapland,
-        the summit gathers experts, researchers, and practitioners worldwide to share
-        insights, innovations, and experiences in orthopedics. You can <a
-          href="/registration"
-          class="underline">register here</a
-        >.
+          target="_blank"
+        >
+          {m.finnish_orthopedic_association({}, { locale })}
+        </a>
+        {m.invites_you_to_the_26th_arctic_orthopedic_summit({}, { locale })}
+        <a
+          href={locale === "fi" ? "/fi/registration" : "/registration"}
+          class="underline"
+        >
+          {m.register_here({}, { locale })}
+        </a>.
       </p>
     </div>
   </section>
   <section class="grid gap-6 md:grid-cols-2 mx-8">
     <Review
-      author="Jani Puhakka, Orhtopedic surgeon from Zurich"
-      body="Great event and venue! Looking forward to meet my collegues and update my knowledge in 2025."
+      author={m.jani_puhakka_orhtopedic_surgeon_from_zurich({}, { locale })}
+      body={m.great_event_and_venue_looking_forward_to_meet({}, { locale })}
     />
     <Review
-      author="Leo Kronberger, Orthopedic surgeon from Graz"
-      body="Great orthopedic congress with international faculty and stunning location."
+      author={m.leo_kronberger_orthopedic_surgeon_from_graz({}, { locale })}
+      body={m.great_orthopedic_congress_with_international_faculty_and_stunning(
+        {},
+        { locale },
+      )}
     />
   </section>
 </BaseLayout>

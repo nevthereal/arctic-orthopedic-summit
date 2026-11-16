@@ -1,4 +1,7 @@
 ---
+import { m } from "../paraglide/messages.js";
+const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 
@@ -8,59 +11,63 @@ const gallery: { default: ImageMetadata }[] = await Astro.glob(
 ---
 
 <BaseLayout
-  title="Activities"
-  desc="The activities you can engane in at the 26th Arctic Orthopedic Summit"
+  title={m.activities({}, { locale })}
+  desc={m.the_activities_you_can_engane_in_at_the({}, { locale })}
 >
   <main class="mx-8 md:mx-16 mb-8">
     <div>
       <div>
-        <h1 class="text-3xl mb-8">Activities</h1>
+        <h1 class="text-3xl mb-8">{m.activities({}, { locale })}</h1>
         <div class="prose">
           <p>
-            A diverse range of activities is available for you to enjoy
-            alongside the conference:
+            {m.a_diverse_range_of_activities_is_available_for({}, { locale })}
             <ul>
               <li>
-                <a href="https://www.levi.fi/en/" target="_blank"
-                  >Alpine Skiing</a
-                >
+                <a href="https://www.levi.fi/en/" target="_blank">
+                  {m.alpine_skiing({}, { locale })}
+                </a>
               </li>
-              <li>Cross country Skiing</li>
+              <li>{m.cross_country_skiing({}, { locale })}</li>
               <li>
-                <a href="https://www.laplandsafaris.com/en" target="_blank"
-                  >Snowmobiling</a
-                >
-              </li>
-              <li>
-                <a href="https://levihuskypark.fi/en/" target="_blank">Husky</a>
+                <a href="https://www.laplandsafaris.com/en" target="_blank">
+                  {m.snowmobiling({}, { locale })}
+                </a>
               </li>
               <li>
-                <a href="https://sammuntupa.fi/en_US" target="_blank"
-                  >Reindeer Tours</a
-                >
+                <a href="https://levihuskypark.fi/en/" target="_blank">
+                  {m.husky({}, { locale })}
+                </a>
               </li>
               <li>
-                <a href="https://www.levi.fi/en/" target="_blank">Restaurants</a
-                >
+                <a href="https://sammuntupa.fi/en_US" target="_blank">
+                  {m.reindeer_tours({}, { locale })}
+                </a>
+              </li>
+              <li>
+                <a href="https://www.levi.fi/en/" target="_blank">
+                  {m.restaurants({}, { locale })}
+                </a>
               </li>
               <li>
                 <a
                   href="https://www.levi.fi/en/activities/wellbeing/sauna/"
-                  target="_blank">Sauna</a
+                  target="_blank"
                 >
+                  {m.sauna({}, { locale })}
+                </a>
               </li>
               <li>
-                <a href="https://levi.northernlightsvillage.com/"
-                  >Northern Lights</a
-                >
+                <a href="https://levi.northernlightsvillage.com/">
+                  {m.northern_lights({}, { locale })}
+                </a>
               </li>
             </ul>
           </p>
         </div>
       </div>
       <div>
-        <h1 class="text-3xl mb-4 mt-8">Image gallery</h1>
-        <p>Some impressions from past events</p>
+        <h1 class="text-3xl mb-4 mt-8">{m.image_gallery({}, { locale })}</h1>
+        <p>{m.some_impressions_from_past_events({}, { locale })}</p>
         <div class="md:columns-3 mt-8 space-y-4">
           {
             gallery.map((img) => {
@@ -68,7 +75,7 @@ const gallery: { default: ImageMetadata }[] = await Astro.glob(
                 <Image
                   loading={"lazy"}
                   src={img.default}
-                  alt="activity"
+                  alt={m.activity({}, { locale })}
                   quality="mid"
                 />
               );

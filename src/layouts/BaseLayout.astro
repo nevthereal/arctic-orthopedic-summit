@@ -8,10 +8,11 @@ interface Props {
 
 const { title, desc } = Astro.props;
 
+const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
 const isProd = import.meta.env.PROD;
 ---
 
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <script
@@ -40,7 +41,7 @@ const isProd = import.meta.env.PROD;
     <title>AOS 2025 - {title}</title>
   </head>
   <body>
-    <Nav client:load />
+    <Nav client:load {locale} path={Astro.url.pathname} />
     <div class="max-w-6xl mx-auto">
       <slot />
     </div>
