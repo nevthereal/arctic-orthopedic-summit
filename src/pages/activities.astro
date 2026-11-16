@@ -2,12 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MarkdownContent from "../components/MarkdownContent.astro";
 const locale = Astro.url.pathname.split("/")[1] === "fi" ? "fi" : "en";
+const labels = getMessages(locale);
 const content = import.meta.glob<
   import("astro").MarkdownInstance<Record<string, string>>
 >("../content/*/activities.md", { eager: true });
 const { frontmatter } = content[`../content/${locale}/activities.md`];
 import { Image } from "astro:assets";
-import { m } from "../paraglide/messages.js";
+import { getMessages } from "../lib/i18n";
 const gallery = Object.values(
   import.meta.glob<{ default: ImageMetadata }>("../assets/activities/*.jpg", {
     eager: true,
@@ -26,7 +27,7 @@ const gallery = Object.values(
           <Image
             loading="lazy"
             src={img.default}
-            alt={m.activity({}, { locale })}
+            alt={labels.activity}
             quality="mid"
           />
         ))

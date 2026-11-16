@@ -27,7 +27,7 @@ pnpm build
 
 General Translation updates `src/content/fi/*.md` from the English Markdown, including title and description. Review the Finnish diff, then commit the content and `gt-lock.json` together. Local credentials are kept in ignored `.env.local`.
 
-Only small UI labels (navigation, language controls, footer roles and image accessibility labels) remain in `messages/en.json`; GT translates them into `messages/fi.json`, and Paraglide compiles them. Page prose no longer uses message keys. Edit UI labels in the English catalog when needed.
+Only small UI labels (navigation, language controls, footer roles and image accessibility labels) remain in `messages/en.json`; GT translates them into `messages/fi.json`, and the typed helper in `src/lib/i18n.ts` reads them directly. Page prose no longer uses message keys. Edit UI labels in the English catalog when needed.
 
 To correct generated Finnish manually, edit the relevant Finnish file and run `pnpm exec gt save-local` to save the correction in GT. `saveLocal` and the committed lockfile preserve reviewed corrections on later local runs.
 
